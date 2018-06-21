@@ -239,8 +239,9 @@ def export_content(self,
     BATCH_PREVIOUS_PATH = batch_previous_path
 
     TODAY = datetime.today()
-    TMPDIR = basedir + '/content_' + \
-        self.getId() + '_' + TODAY.strftime('%Y-%m-%d-%H-%M-%S')
+    TMPDIR = basedir + '/content_' + self.getId()
+    # TMPDIR = basedir + '/content_' + \
+    #     self.getId() + '_' + TODAY.strftime('%Y-%m-%d-%H-%M-%S')
 
     ID_TO_SKIP += list(extra_skip_id)
     id_to_skip = self.REQUEST.get('id_to_skip', None)
