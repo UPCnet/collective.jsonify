@@ -4,10 +4,13 @@ from __future__ import generators
 from collective.jsonify.methods import _clean_dict
 from collective.jsonify.wrapper import Wrapper
 from datetime import datetime
+
 import logging
 import os
 # import pprint
 import shutil
+
+
 # import sys
 # import traceback
 try:
@@ -239,7 +242,7 @@ def export_content(self,
     BATCH_PREVIOUS_PATH = batch_previous_path
 
     TODAY = datetime.today()
-    TMPDIR = basedir + '/content_' + self.getId()
+    TMPDIR = basedir + '/content'
     # TMPDIR = basedir + '/content_' + \
     #     self.getId() + '_' + TODAY.strftime('%Y-%m-%d-%H-%M-%S')
 
