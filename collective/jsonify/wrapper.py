@@ -560,6 +560,21 @@ class Wrapper(dict):
                 if key is not None:
                     self['_ac_local_roles'][key] = val
 
+        self['_local_roles'] = {}
+        try:
+            sharing = self.context.restrictedTraverse('@@sharing')
+            local_roles = sharing.existing_role_settings()
+            for val in local_roles:
+                listRoles = []
+                for rol in val['roles']:
+                    if val['roles'][str(rol)] != False:
+                        listRoles.append(str(rol))
+                if listRoles != []:
+                    self['_local_roles'][str(val['id'])] =  listRoles
+        except:
+            pass
+
+
     def get_userdefined_roles(self):
         """User defined roles for object (via sharing UI)
         :keys: _userdefined_roles
