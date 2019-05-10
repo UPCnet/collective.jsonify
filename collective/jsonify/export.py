@@ -241,6 +241,7 @@ def export_content(self,
     BATCH_SIZE = batch_size
     BATCH_PREVIOUS_PATH = batch_previous_path
 
+
     TODAY = datetime.today()
     TMPDIR = basedir + '/content'
     # TMPDIR = basedir + '/content_' + \
@@ -408,7 +409,7 @@ def write(items):
                 ppath,
                 os.path.join(
                     TMPDIR,
-                    str(COUNTER / 1000),
+                    str(COUNTER / 10),
                     str(COUNTER) + '.json'
                 )
             ))
@@ -419,7 +420,7 @@ def write_to_jsonfile(item):
     global COUNTER
 
     # 1000 files per folder, so we dont reach some fs limit
-    SUB_TMPDIR = os.path.join(TMPDIR, str(COUNTER / 1000))
+    SUB_TMPDIR = os.path.join(TMPDIR, str(COUNTER / 10))
     if not os.path.isdir(SUB_TMPDIR):
         os.mkdir(SUB_TMPDIR)
 
