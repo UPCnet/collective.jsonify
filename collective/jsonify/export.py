@@ -409,7 +409,7 @@ def write(items):
                 ppath,
                 os.path.join(
                     TMPDIR,
-                    str(COUNTER / 10),
+                    str(COUNTER / 100),
                     str(COUNTER) + '.json'
                 )
             ))
@@ -420,7 +420,7 @@ def write_to_jsonfile(item):
     global COUNTER
 
     # 1000 files per folder, so we dont reach some fs limit
-    SUB_TMPDIR = os.path.join(TMPDIR, str(COUNTER / 10))
+    SUB_TMPDIR = os.path.join(TMPDIR, str(COUNTER / 100))
     if not os.path.isdir(SUB_TMPDIR):
         os.mkdir(SUB_TMPDIR)
 
